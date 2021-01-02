@@ -1,8 +1,9 @@
-package com.example.newsapp.model.database.entity
+package com.example.newsapp.model.database
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.example.newsapp.view.data.Source
+import java.io.Serializable
 
 @Entity(
     tableName = "articles"
@@ -18,5 +19,5 @@ class Article(
     val urlToImage: String,
     val publishedAt: String,
     val content: String,
-) {
+) : Serializable {
 }

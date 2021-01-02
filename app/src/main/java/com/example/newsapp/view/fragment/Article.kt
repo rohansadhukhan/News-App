@@ -1,17 +1,28 @@
 package com.example.newsapp.view.fragment
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import android.webkit.WebChromeClient
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
 import com.example.newsapp.R
+import com.example.newsapp.view.activity.MainActivity
+import com.example.newsapp.viewmodel.NewsViewModel
+import kotlinx.android.synthetic.main.article.*
 
-class Crypto : Fragment() {
+class Article : Fragment(R.layout.article) {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view : View = inflater.inflate(R.layout.fragment_default, container, false)
-        return view
+    lateinit var viewModel: NewsViewModel
+    val args: ArticleArgs by navArgs()
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel = (activity as MainActivity).viewModel
+        val article = args.article
+        webView.apply {
+            webChromeClient = WebChromeClient()
+            loadUrl(article.url)
+        }
     }
 
 }

@@ -1,5 +1,6 @@
 package com.example.newsapp.model.network
 
+import com.example.newsapp.utility.Constants.Companion.BASE_URL
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

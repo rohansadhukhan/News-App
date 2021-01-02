@@ -1,8 +1,7 @@
-package com.example.newsapp.model.database.dao
+package com.example.newsapp.model.database
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.example.newsapp.model.database.entity.Article
 
 @Dao
 interface ArticleDao {

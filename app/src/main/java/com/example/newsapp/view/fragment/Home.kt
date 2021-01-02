@@ -5,18 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.newsapp.R
-import com.example.newsapp.model.database.entity.Article
+import com.example.newsapp.model.database.Article
 import com.example.newsapp.view.activity.MainActivity
 import com.example.newsapp.view.adapter.NewsAdapter
 import com.example.newsapp.viewmodel.NewsViewModel
 
-class Home : Fragment(), NewsAdapter.OnItemClickListener {
+class Home : Fragment() {
 
     private lateinit var recyclerView : RecyclerView
     private lateinit var adapter: NewsAdapter
@@ -31,22 +29,22 @@ class Home : Fragment(), NewsAdapter.OnItemClickListener {
         setRecyclerView(view)
 
         viewModel = (activity as MainActivity).viewModel
-        viewModel.getTopNews("in")
-        viewModel.newsList.observe(viewLifecycleOwner, Observer {
-            articles = it as ArrayList<Article>
-            adapter.updateArticles(articles)
-        })
+//        viewModel.getTopNews("in")
+//        viewModel.newsList.observe(viewLifecycleOwner, Observer {
+//            articles = it as ArrayList<Article>
+//            adapter.updateArticles(articles)
+//        })
 
 
         return view
     }
 
-    override fun onItemClick(position: Int) {
-//        TODO("Not yet implemented")
-    }
+//    override fun onItemClick(position: Int) {
+////        TODO("Not yet implemented")
+//    }
 
     private fun setRecyclerView(view : View) {
-        adapter = NewsAdapter(articles, this)
+//        adapter = NewsAdapter(articles, this)
         recyclerView = view.findViewById(R.id.recycler_view)
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(context)

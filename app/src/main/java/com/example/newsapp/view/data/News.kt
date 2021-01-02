@@ -1,6 +1,6 @@
 package com.example.newsapp.view.data
 
-import com.example.newsapp.model.database.entity.Article
+import com.example.newsapp.model.database.Article
 
 data class News(
     val status : String,
